@@ -63,3 +63,46 @@ Let i be the parent node index:
 
 - Left child index: 2i + 1
 - Right child index: 2i + 2
+
+## Adding Elements to Binary Heap
+
+Steps:
+
+1. Put the new value on the bubbling up position: In trees is the last line at left, in array is the last position
+2. Compare it with its parent
+    1. If the heap invariant is violated, change them
+    2. If the heap invariant is not violated, next
+3. Continue doing the step 2 until we get the 2.2
+
+## Removing/Polling Elements to Binary Heap
+
+### Polling
+
+In general with Heaps, we always want to remove the root value, because its the node with high priority.
+
+Steps:
+
+1. Save the root value
+2. Swap the root with the last position
+3. Compare root with your children and select the smallest. When we have a tie, select the left one
+    1. If the heap invariant is violated, change them (bubbling down)
+    2. If the heap invariant is not violated, next
+4. Continue doing the step 2 until we get the 2.2
+
+### Removing
+
+However, sometimes it's necessary remove other elements.
+
+#### Naive removing steps
+
+1. Search in all nodes to find the element who you wants remove
+2. Swap it with the last position: In trees is the last line at left, in array is the last position
+3. Return and remove the last element
+4. And now, we bubbling the node that changed position until heap invariant, like the other cases.
+    - Check both parent and children
+
+#### Removing using Hash Tables steps
+
+Watch: https://youtu.be/eVq8CmoC1x8?si=t561DTUPJ8WrBUUh&t=660
+
+Visualize it is better
